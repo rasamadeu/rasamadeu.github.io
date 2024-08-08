@@ -1,0 +1,42 @@
+
+body {
+    min-height: 100vh;
+    background-color: green;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+body > * {
+    flex: 1 100%;
+}
+
+
+nav {
+    background-color: #7B2CBF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: #7B2CBF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main {
+    background-color: #C77DFF;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main-image {
+    width: 30%;
+}
+
+.main-text {
+    width: 40%;
+}
+
