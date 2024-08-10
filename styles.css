@@ -34,19 +34,34 @@ main {
     align-items: center;
 }
 
+p {
+    text-align: justify;
+}
+
 .main-image {
-    width: 30%;
+    width: 20%;
 }
 
 .main-text {
     width: 40%;
-    height: 70%;
 }
 
 .text-wrapper {
-    display: flex;
-    justify-content: center;
-    border: solid black;
+    background-color: magenta;
+    border: 10px solid black;
     border-radius: 30px;
     padding: 30px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
 }
+
+.text-wrapper h1 {
+    margin: 0 0 0.7em;
+}
+
+.text-wrapper p {
+    line-height: 30px;
+    margin: 0 0 1rem;
+}
+
