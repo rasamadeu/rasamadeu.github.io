@@ -1,4 +1,6 @@
 
+/* Tags */
+
 body {
     min-height: 100vh;
     background-color: green;
@@ -34,9 +36,12 @@ main {
     align-items: center;
 }
 
-p {
+h1, p {
     text-align: justify;
+    animation: 2s 1 normal fadein;
 }
+
+/* Classes */
 
 .main-image {
     width: 20%;
@@ -63,5 +68,21 @@ p {
 .text-wrapper p {
     line-height: 30px;
     margin: 0 0 1rem;
+}
+
+/* Animations */
+
+@keyframes fadein {
+
+    from {
+        opacity: 0;
+        translate: 0 2rem;
+    }
+
+    to {
+        opacity: 100;
+        translate: 0 0;
+    }
+
 }
 
