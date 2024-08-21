@@ -1,4 +1,4 @@
-// DOM objects
+//  DOM objects
 const body = document.querySelector("body");
 const theme_buttons = document.querySelectorAll(".theme-button");
 const language_buttons = document.querySelectorAll(".language-button");

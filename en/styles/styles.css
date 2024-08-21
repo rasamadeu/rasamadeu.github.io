@@ -51,7 +51,7 @@ nav > ul {
     align-items: center;
 }
 
-h3 {
+h2 {
     margin: 0;
 }
 
@@ -68,7 +68,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    transition: background-color var(--normal-speed);
+    transition: inherit;
 }
 
 h1, p {
@@ -77,6 +77,7 @@ h1, p {
 }
 
 a {
+    text-align: center;
     text-decoration: none;
 }
 
@@ -88,18 +89,6 @@ i {
 i:hover {
     color: light-dark(var(--light-items-hover), var(--dark-items-hover));
     transition: color var(--fast-speed);
-}
-
-button {
-    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
-    color: light-dark(var(--light-text), var(--dark-text));
-    border: none;
-    margin: 0;
-    transition: background-color var(--normal-speed);
-}
-
-button > span{
-    pointer-events: none;
 }
 
 /* Classes */
@@ -126,6 +115,7 @@ button > span{
     display: flex;
     flex-flow: column nowrap;
     order: 1;
+    transition: inherit;
 }
 
 .top-navigation-bar {
@@ -134,7 +124,7 @@ button > span{
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between; 
-    transition: background-color var(--normal-speed);
+    transition: inherit;
 }
 
 .navigation-item {
@@ -168,21 +158,38 @@ button > span{
     justify-content: end;
 }
 
-.popup-button {
-    padding-inline: 1em;
+.button, .button a{
+    color: light-dark(var(--light-text), var(--dark-text));
+    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
+    opacity: 100;
+
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    font-family: inherit;
+    font-size: 15px;
     gap: 0.5em;
     width: 80px;
-    display: flex;
+
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
+
+    overflow: hidden;
+    transition: width var(--normal-speed);
 }
 
-.popup-button > span{
-    font-size: 2em;
+.button > span{
+    pointer-events: none;
+    font-size: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    overflow: hidden;
 }
 
 .hidden {
-    display: none;
+    width: 0;
 }
 
 .text-wrapper {
@@ -199,6 +206,8 @@ button > span{
     line-height: 30px;
     margin: 0 0 1rem;
 }
+
+/* Id */
 
 /* Animations */
 
