@@ -51,4 +51,27 @@ language_buttons[1].addEventListener("click", () => {
 
 // Hides popup menus if mouse clicks outside buttons
 document.addEventListener("click", () => {
+
+	if (!event.target.closest(".theme-button"))
+	{
+		const mode = document.querySelector("body").className;
+		if (mode) {
+			for (let i = 0; i < 3; i++)
+			{
+				if (mode !== theme_buttons[i].textContent.trim().toLowerCase())
+				{
+					theme_buttons[i].classList.add("hidden");
+				}
+			}
+		}
+	}
+})
+
+// Hides popup menus if mouse clicks outside buttons
+document.addEventListener("click", () => {
+
+	if (!event.target.closest(".language-button"))
+	{
+		language_buttons[1].classList.add("hidden");
+	}
 })
