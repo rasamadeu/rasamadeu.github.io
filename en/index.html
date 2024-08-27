@@ -7,103 +7,127 @@
     <!--link rel="alternate" hreflang="pt" title="Página principal" href=""-->
     <!--link rel="alternate" hreflang="en" title="Homepage" href=""-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script type="module" src="index.js"></script>
     <script src="https://kit.fontawesome.com/98731e439a.js" crossorigin="anonymous"></script>
+    <script type="module" src="../header.js"></script>
+    <link rel="stylesheet" href="../styles/styles.css">
     <title>Homepage</title>
+    <script>
+        // Check if localstorage is available
+        function storageAvailable(type) {
+            let storage;
+            try {
+                storage = window[type];
+                const x = "test";
+                storage.setItem(x, x);
+                storage.removeItem(x, x);
+                return true;
+            }
+            catch (e) {
+                return e instanceof DOMexception &&
+                    e.name === "QuotaExceededError";
+            }
+        }
+
+        // Sets localStorage if not defined already
+        if (storageAvailable("localStorage") && localStorage.length === 0) {
+            localStorage.setItem("mode", "os");
+        }
+        else {
+            const mode = localStorage.getItem("mode");
+            document.querySelector("html").className = mode;
+        }
+    </script>
+
 </head>
 
 <body>
-
-    <img class="profile-picture" src="images/portrait_2.jpg" alt="Profile Picture">
-
-    <div class="side-bar">
-        <div class="top-navigation-bar">
-
-            <nav>
-                <ul>
-                    <li class="navigation-item active">
-                        <a aria-current="page" href="index.html">
-                            <h2>Homepage</h2>
-                        </a>
-                    </li>
-                    <li class="navigation-item">
-                        <a href="about.html">
-                            <h2>About</h2>
-                        </a>
-                    </li>
-                    <li class="navigation-item">
-                        <a href="projects.html">
-                            <h2>Projects</h2>
-                        </a>
-                    </li>
-                    <li class="navigation-item">
-                        <a href="contacts.html">
-                            <h2>Contacts</h2>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <div class="popup-menu-container">
-
-                <div id="theme-button-wrapper" class="button-wrapper">
-                    <button id="theme-button-os" class="button theme-button">
-                        <span class="fa-solid fa-circle-half-stroke">
-                        </span>
-                        OS
-                    </button>
-
-                    <button id="theme-button-light" class="button theme-button light hidden">
-                        <span class="fa-solid fa-sun">
-                        </span>
-                        Light
-                    </button>
-
-                    <button id="theme-button-dark" class="button theme-button dark hidden">
-                        <span class="fa-solid fa-moon">
-                        </span>
-                        Dark
-                    </button>
-                </div>
-
-                <div id="language-button-wrapper" class="button-wrapper">
-                    <button id="language-en-button" class="button language-button">
-                        <span class="fi fi-gb fis">
-                        </span>
-                        EN
-                    </button>
-
-                    <a href="../pt/index.html" id="language-pt-button" class="button language-button hidden">
-                        <span class="fi fi-pt fis">
-                        </span>
-                        PT
-                    </a>
-                </div>
-
-            </div>
+    <header>
+        <div class="navigation-item active">
+            <h2>Homepage</h2>
+            <button type=button id="menu-toggle">
+                <span class="fa-solid fa-bars"></span>
+            </button>
         </div>
 
-        <main>
-            <div class="text-wrapper">
-                <h1> Hello! I'm Ricardo Amadeu.</h1>
-                <p> aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao
-                    etidaeontibontebi. atnebia tneiantdi adnesabitasbo e </p>
-                <p> aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao
-                    etidaeontibontebi. atnebia tneiantdi adnesabitasbo e aoentuaoent sah adtoirg lrexai baroleic
-                    aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao etidaeontibontebi. atnebia tneiantdi
-                    adnesabitasbo e aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb
-                    nadoeinao etidaeontibontebi. atnebia tneiantdi adnesabitasbo e </p>
-                <div>
-        </main>
+        <nav class="top-navigation-bar hidden">
+            <ul>
+                <a href="about.html" class="navigation-item">
+                    <li>
+                        <h2>About</h2>
+                    </li>
+                </a>
+                <a href="projects.html" class="navigation-item">
+                    <li>
+                        <h2>Projects</h2>
+                    </li>
+                </a>
+                <a href="contacts.html" class="navigation-item">
+                    <li>
+                        <h2>Contacts</h2>
+                    </li>
+                </a>
+            </ul>
 
-        <footer>
-            <a href="http://www.facebook.com/ricardo.amadeu.10"><i class="fa-brands fa-facebook"></i> </a>
-            <a href="http://www.linkedin.com/in/ricardo-amadeu10a17a21a"><i class="fa-brands fa-linkedin"></i> </a>
-            <a href="http://github.com/rasamadeu"><i class="fa-brands fa-github"></i> </a>
-            <a href="http://www.instagram.com/rito.amadeu"><i class="fa-brands fa-instagram"></i> </a>
-        </footer>
-    </div>
+            <div id="theme-button-wrapper" class="button-wrapper">
+                <button id="theme-button-os" class="button theme-button hidden">
+                    <span class="fa-solid fa-circle-half-stroke">
+                    </span>
+                    OS
+                </button>
+
+                <button id="theme-button-light" class="button theme-button light hidden">
+                    <span class="fa-solid fa-sun">
+                    </span>
+                    Light
+                </button>
+
+                <button id="theme-button-dark" class="button theme-button dark hidden">
+                    <span class="fa-solid fa-moon">
+                    </span>
+                    Dark
+                </button>
+            </div>
+
+            <div id="language-button-wrapper" class="button-wrapper">
+                <button id="language-button-en" class="button language-button">
+                    <span class="fi fi-gb fis">
+                    </span>
+                    EN
+                </button>
+
+                <a href="../pt/index.html" id="language-button-pt" class="button language-button hidden">
+                    <span class="fi fi-pt fis">
+                    </span>
+                    PT
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <img class="profile-picture" src="../images/portrait_2.jpg" alt="Profile Picture">
+
+        <h1 id="header-title"> Hello! </h1>
+
+        <div class="text-wrapper">
+            <p> aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao
+                etidaeontibontebi. atnebia tneiantdi adnesabitasbo e </p>
+            <p> aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao
+                etidaeontibontebi. atnebia tneiantdi adnesabitasbo e aoentuaoent sah adtoirg lrexai baroleic
+                aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao etidaeontibontebi. atnebia tneiantdi
+                adnesabitasbo e aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb
+                nadoeinao etidaeontibontebi. atnebia tneiantdi adnesabitasbo e </p>
+        </div>
+
+    </main>
+
+    <footer>
+        <a href="http://www.facebook.com/ricardo.amadeu.10"><i class="fa-brands fa-facebook"></i> </a>
+        <a href="http://www.linkedin.com/in/ricardo-amadeu10a17a21a"><i class="fa-brands fa-linkedin"></i> </a>
+        <a href="http://github.com/rasamadeu"><i class="fa-brands fa-github"></i> </a>
+        <a href="http://www.instagram.com/rito.amadeu"><i class="fa-brands fa-instagram"></i> </a>
+    </footer>
 
 </body>
 
