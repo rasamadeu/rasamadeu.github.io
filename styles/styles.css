@@ -24,7 +24,7 @@
     /* Transition times*/
     --normal-speed: 1s;
     --fast-speed: 0.5s;
-
+    --welcome-speed: 1.5s;
 }
 
 /* Mobile devices first
@@ -47,9 +47,11 @@ body {
 header {
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 h2 {
+    font-size: 1.2rem;
     margin: 0;
 }
 
@@ -110,21 +112,63 @@ i:hover {
 
 #header-title {
     padding: 0;
-    margin: 0 0 1em;
     order: 0;
+    height: auto;
+    display: grid;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    grid-column: 1;
+    grid-row: 1;
     text-align: center; 
+    opacity: 0;
+}
+
+.title:nth-child(1){
+    animation: var(--welcome-speed) title_animation;
+    animation-delay: calc(1s + var(--welcome-speed));
+}
+
+.title:nth-child(2){
+    animation: var(--welcome-speed) title_animation;
+    animation-delay: calc(1s + 2 * var(--welcome-speed));
+}
+
+.title:nth-child(3){
+    animation: var(--welcome-speed) show;
+    animation-delay: calc(1s + 3 * var(--welcome-speed));
+    animation-fill-mode: forwards;
+}
+
+h1.title::before{
+    content: "I'm "
+}
+
+h1.title::after{
+    content: "."
 }
 
 .profile-picture {
     border-radius: 30px;
     border: solid 3px;
     border-color: light-dark(var(--normal-color), var(--normal-color));
-    animation: 3s 1 ease-out show-image;
+    opacity: 0;
+    animation: var(--welcome-speed) ease-out show;
+    animation-delay: var(--normal-speed);
+    animation-fill-mode: forwards;
     order: 1;
 }
 
 .text-wrapper {
     order: 2;
+    opacity: 0;
+    animation: var(--welcome-speed) show;
+    animation-delay: calc(1s + 3.5 * var(--welcome-speed));
+    animation-fill-mode: forwards;
 }
 
 .top-navigation-bar {
@@ -247,4 +291,34 @@ h1, p {
     text-align: justify;
     animation: 2s 1 fadein;
 }
+
+
+/* Animation */
+
+@keyframes show {
+
+from {
+    opacity: 0;
+}
+
+to {
+    opacity: 1;
+}
+}
+
+@keyframes title_animation {
+
+from {
+    opacity: 0;
+}
+
+25%, 75% {
+    opacity: 1;
+}
+
+to {
+    opacity: 0;
+}
+}
+
 
