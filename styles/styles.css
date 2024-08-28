@@ -110,6 +110,108 @@ i:hover {
     color-scheme: white;
 }
 
+.top-navigation-bar {
+    max-height: 25em;
+    padding: 0;
+    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 
+       max-height var(--normal-speed) cubic-bezier(0, 0, 0.1, 0.9);
+}
+
+.top-navigation-bar > ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.navigation-item {
+    width: 100%;
+    margin: 0;
+    padding: 1.5em;
+    border-bottom: solid 1px;
+    border-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
+    justify-content: space-between;
+}
+
+.navigation-item:hover {
+    background-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
+    transition: background-color var(--fast-speed);
+}
+
+.navigation-item.active {
+    box-sizing: border-box;
+    background-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
+    border-bottom: solid 2px;
+    border-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all var(--normal-speed);
+}
+
+.navigation-item.active > button {
+    width: 35px;
+    height: 35px;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.button, .button a{
+    color: light-dark(var(--light-text), var(--dark-text));
+    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
+
+    border: none;
+    margin: 0;
+    padding: 1em 0em;
+
+    font-family: inherit;
+    font-size: 15px;
+    gap: 0.5em;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    transition:
+        width var(--fast-speed),
+        background-color var(--normal-speed);
+}
+
+.theme-button{
+    width: 90px;
+}
+
+.language-button{
+    width: 80px;
+}
+
+.button > span{
+    pointer-events: none;
+    overflow: hidden;
+    font-size: 20px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.button.hidden {
+    width: 0;
+}
+
+.top-navigation-bar.hidden {
+    max-height: 0;
+}
+
 #header-title {
     padding: 0;
     order: 0;
@@ -171,129 +273,11 @@ h1.title::after{
     animation-fill-mode: forwards;
 }
 
-.top-navigation-bar {
-    max-height: 25em;
-    padding: 0;
-    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
-    order: 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    overflow: hidden;
-    transition: 
-        background-color var(--normal-speed),
-        max-height var(--normal-speed) cubic-bezier(0, 0, 0.1, 0.9);
-}
-
-.top-navigation-bar > ul {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    list-style-type: none;
-    display: flex;
-    flex-flow: row wrap;
-}
-
-.navigation-item {
-    width: 100%;
-    margin: 0;
-    padding: 1.5em;
-    border-bottom: solid 1px;
-    border-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
-    justify-content: space-between;
-}
-
-.navigation-item:hover {
-    background-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
-    transition: background-color var(--fast-speed);
-}
-
-.navigation-item.active {
-    box-sizing: border-box;
-    background-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
-    border-bottom: solid 2px;
-    border-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: all var(--normal-speed);
-}
-
-.navigation-item.active > button {
-    width: 35px;
-    height: 35px;
-}
-
-.popup-menu-container{
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-.popup-menu-container > *{
-    flex: 1;
-}
-
-.button-wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.button, .button a{
-    color: light-dark(var(--light-text), var(--dark-text));
-    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
-
-    border: none;
-    margin: 0;
-    padding: 1em 0em;
-
-    font-family: inherit;
-    font-size: 15px;
-    gap: 0.5em;
-
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-    transition:
-        width var(--fast-speed),
-        background-color var(--normal-speed);
-}
-
-.theme-button{
-    width: 90px;
-}
-
-.language-button{
-    width: 80px;
-}
-
-.button > span{
-    pointer-events: none;
-    overflow: hidden;
-    font-size: 20px;
-    min-width: 20px;
-    min-height: 20px;
-}
-
-.button.hidden {
-    width: 0;
-}
-
-.top-navigation-bar.hidden {
-    max-height: 0;
-}
-
 p {
     line-height: 30px;
     margin: 0 0 1rem;
-}
-
-h1, p {
     text-align: justify;
-    animation: 2s 1 fadein;
 }
-
 
 /* Animation */
 
@@ -323,4 +307,37 @@ to {
 }
 }
 
+/* Landscape orientation */
+
+@media screen and (orientation: landscape){
+
+header {
+    display: flex;
+}
+
+.top-navigation-bar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.top-navigation-bar > ul {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.navigation-item {
+    width: auto;
+    border-bottom: 0;
+}
+
+.navigation-item.active{
+    border: 0;
+}
+
+.button-wrapper {
+    min-width: 50%;
+}
+
+}
 

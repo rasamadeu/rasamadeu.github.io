@@ -9,6 +9,39 @@ const menu_button = document.querySelector("#menu-toggle");
 const mode = document.querySelector("html").className;
 document.querySelector("#theme-button-" + mode).classList.remove("hidden");
 
+// Set configuration at breakpoints
+function setLandscape(){
+	top_nav_bar.classList.remove("hidden");
+	menu_button.remove();
+}
+
+function setPortrait(){
+	top_nav_bar.classList.add("hidden");
+	document.querySelector(".navigation-item.active").appendChild(menu_button);
+	menu_button.children[0].classList.add("fa-bars");
+	menu_button.children[0].classList.remove("fa-xmark");
+       
+}
+
+let landscape = window.matchMedia("(orientation: landscape)");
+
+if (landscape.matches)
+{
+	setLandscape();
+}
+
+landscape.addEventListener("change", () => {
+
+	if (landscape.matches)
+	{
+		setLandscape();
+	}
+	else
+	{
+		setPortrait();
+	}
+})
+
 // Controls the OS theme button colors (light or dark mode)
 const media_query_os_theme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -48,36 +81,39 @@ for (let i = 0; i < 3; i++){
 	});
 }
 
-// Hides theme popup menu if mouse clicks outside buttons
+// Hides menus if mouse clicks outside buttons
 document.addEventListener("click", () => {
 
-	if (!event.target.closest(".theme-button"))
+	if (!landscape.matches)
 	{
-		const mode = document.querySelector("html").className;
-		if (mode) {
-			for (let i = 0; i < 3; i++)
-			{
-				if (mode !== theme_buttons[i].id.split("-").at(-1))
+		if (!event.target.closest(".theme-button"))
+		{
+			const mode = document.querySelector("html").className;
+			if (mode) {
+				for (let i = 0; i < 3; i++)
 				{
-					theme_buttons[i].classList.add("hidden");
+				if (mode !== theme_buttons[i].id.split("-").at(-1))
+					{
+						theme_buttons[i].classList.add("hidden");
+					}
 				}
 			}
 		}
-	}
 
-	if (!event.target.closest(".language-button"))
-	{
-		language_buttons[1].classList.add("hidden");
-	}
-
-	if (!event.target.closest("header"))
-	{
-		top_nav_bar.classList.add("hidden");
-		const elem = menu_button.firstElementChild;
-		if (elem.classList.contains("fa-xmark"))
+		if (!event.target.closest(".language-button"))
 		{
-			elem.classList.toggle("fa-bars");
-			elem.classList.toggle("fa-xmark");
+			language_buttons[1].classList.add("hidden");
+		}
+
+		if (!event.target.closest("header"))
+		{
+			top_nav_bar.classList.add("hidden");
+			const elem = menu_button.firstElementChild;
+			if (elem.classList.contains("fa-xmark"))
+			{
+				elem.classList.toggle("fa-bars");
+				elem.classList.toggle("fa-xmark");
+			}
 		}
 	}
 })
