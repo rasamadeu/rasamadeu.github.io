@@ -9,6 +9,17 @@ const menu_button = document.querySelector("#menu-toggle");
 const mode = document.querySelector("html").className;
 document.querySelector("#theme-button-" + mode).classList.remove("hidden");
 
+// Set header title
+const title = document.querySelectorAll(".title");
+if (title[0].textContent.trim() === "Hello!")
+{
+	title[2].textContent = "I'm Ricardo Amadeu."
+}
+else
+{
+	title[2].textContent = "Sou o Ricardo Amadeu."
+}
+
 // Set configuration at breakpoints
 function setLandscape(){
 	top_nav_bar.classList.remove("hidden");

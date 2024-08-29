@@ -227,6 +227,9 @@ i:hover {
     grid-column: 1;
     grid-row: 1;
     text-align: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
 }
 
@@ -246,13 +249,14 @@ i:hover {
     animation-fill-mode: forwards;
 }
 
-h1.title::before{
+/*h1.title::before{
     content: "I'm "
 }
 
 h1.title::after{
     content: "."
 }
+*/
 
 .profile-picture {
     border-radius: 30px;

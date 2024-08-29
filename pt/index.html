@@ -41,72 +41,80 @@
 </head>
 
 <body>
-    <img class="profile-picture" src="../images/portrait_2.jpg" alt="Profile Picture">
+    <header>
+        <div class="navigation-item active">
+            <h2>Página Inicial</h2>
+            <button type=button id="menu-toggle">
+                <span class="fa-solid fa-bars"></span>
+            </button>
+        </div>
 
-    <header class="navigation-item active">
-        <h2>Página Inicial</h2>
-        <button type=button id="menu-toggle">
-            <span class="fa-solid fa-bars"></span>
-        </button>
+        <nav class="top-navigation-bar hidden">
+            <ul>
+                <a href="about.html" class="navigation-item">
+                    <li>
+                        <h2>Sobre</h2>
+                    </li>
+                </a>
+                <a href="projects.html" class="navigation-item">
+                    <li>
+                        <h2>Projectos</h2>
+                    </li>
+                </a>
+                <a href="contacts.html" class="navigation-item">
+                    <li>
+                        <h2>Contactos</h2>
+                    </li>
+                </a>
+            </ul>
+
+            <div id="theme-button-wrapper" class="button-wrapper">
+                <button id="theme-button-os" class="button theme-button hidden">
+                    <span class="fa-solid fa-circle-half-stroke">
+                    </span>
+                    SO
+                </button>
+
+                <button id="theme-button-light" class="button theme-button light hidden">
+                    <span class="fa-solid fa-sun">
+                    </span>
+                    Claro
+                </button>
+
+                <button id="theme-button-dark" class="button theme-button dark hidden">
+                    <span class="fa-solid fa-moon">
+                    </span>
+                    Escuro
+                </button>
+            </div>
+
+            <div id="language-button-wrapper" class="button-wrapper">
+                <button id="language-button-pt" class="button language-button">
+                    <span class="fi fi-pt fis">
+                    </span>
+                    PT
+                </button>
+
+                <a href="../en/index.html" id="language-button-en" class="button language-button hidden">
+                    <span class="fi fi-gb fis">
+                    </span>
+                    EN
+                </a>
+            </div>
+        </nav>
+
     </header>
 
-    <nav class="top-navigation-bar hidden">
-        <ul>
-            <a href="about.html" class="navigation-item">
-                <li>
-                    <h2>Sobre</h2>
-                </li>
-            </a>
-            <a href="projects.html" class="navigation-item">
-                <li>
-                    <h2>Projectos</h2>
-                </li>
-            </a>
-            <a href="contacts.html" class="navigation-item">
-                <li>
-                    <h2>Contactos</h2>
-                </li>
-            </a>
-        </ul>
-
-        <div id="theme-button-wrapper" class="button-wrapper">
-            <button id="theme-button-os" class="button theme-button hidden">
-                <span class="fa-solid fa-circle-half-stroke">
-                </span>
-                SO
-            </button>
-
-            <button id="theme-button-light" class="button theme-button light hidden">
-                <span class="fa-solid fa-sun">
-                </span>
-                Claro
-            </button>
-
-            <button id="theme-button-dark" class="button theme-button dark hidden">
-                <span class="fa-solid fa-moon">
-                </span>
-                Escuro
-            </button>
-        </div>
-
-        <div id="language-button-wrapper" class="button-wrapper">
-            <button id="language-button-pt" class="button language-button">
-                <span class="fi fi-pt fis">
-                </span>
-                PT
-            </button>
-
-            <a href="../en/index.html" id="language-button-en" class="button language-button hidden">
-                <span class="fi fi-gb fis">
-                </span>
-                EN
-            </a>
-        </div>
-    </nav>
-
     <main>
+        <img class="profile-picture" src="../images/portrait_2.jpg" alt="Profile Picture">
+
+        <div id="header-title">
+            <p class="title"> Olá! </p>
+            <p class="title"> Bemvindo à minha página pessoal. </p>
+            <h1 class="title">Ricardo Amadeu</h1>
+        </div>
+
         <div class="text-wrapper">
-            <h1> Ola. Sou o RITO.</h1>
             <p> aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao
                 etidaeontibontebi. atnebia tneiantdi adnesabitasbo e </p>
             <p> aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao
@@ -114,7 +122,8 @@
                 aboierbc oerciboaceisnbint aobeisni batnoieb nadoeinao etidaeontibontebi. atnebia tneiantdi
                 adnesabitasbo e aoentuaoent sah adtoirg lrexai baroleic aboierbc oerciboaceisnbint aobeisni batnoieb
                 nadoeinao etidaeontibontebi. atnebia tneiantdi adnesabitasbo e </p>
-            <div>
+        </div>
+
     </main>
 
     <footer>
@@ -123,10 +132,7 @@
         <a href="http://github.com/rasamadeu"><i class="fa-brands fa-github"></i> </a>
         <a href="http://www.instagram.com/rito.amadeu"><i class="fa-brands fa-instagram"></i> </a>
     </footer>
-    </div>
 
 </body>
-
-</html>
 
 </html>
