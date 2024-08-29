@@ -27,8 +27,43 @@
     --welcome-speed: 1.5s;
 }
 
+/* Google fonts*/
+
+.ubuntu-mono-regular {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-mono-bold {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-mono-regular-italic {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-mono-bold-italic {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
 /* Mobile devices first
 /* Tags */
+html:not(span, i) {
+    font-family: "ubuntu-mono", monospace;
+    text-color: light-dark(var(--dark-color), var(--light-color));
+}
+
+b {
+    color: light-dark(var(--darkest-color), var(--lightest-color));
+}
+
 * {
     color: light-dark(var(--light-text), var(--dark-text));
 }
@@ -281,6 +316,7 @@ p {
     line-height: 30px;
     margin: 0 0 1rem;
     text-align: justify;
+    text-justify: inter-word;
 }
 
 /* Animation */

@@ -31,7 +31,6 @@ function setPortrait(){
 	document.querySelector(".navigation-item.active").appendChild(menu_button);
 	menu_button.children[0].classList.add("fa-bars");
 	menu_button.children[0].classList.remove("fa-xmark");
-       
 }
 
 let landscape = window.matchMedia("(orientation: landscape)");
