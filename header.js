@@ -27,10 +27,13 @@ function setLandscape(){
 }
 
 function setPortrait(){
+	top_nav_bar.classList.add("notransition");
 	top_nav_bar.classList.add("hidden");
 	document.querySelector(".navigation-item.active").appendChild(menu_button);
 	menu_button.children[0].classList.add("fa-bars");
 	menu_button.children[0].classList.remove("fa-xmark");
+	getComputedStyle(top_nav_bar).opacity;
+	top_nav_bar.classList.remove("notransition");
 }
 
 let landscape = window.matchMedia("(orientation: landscape)");

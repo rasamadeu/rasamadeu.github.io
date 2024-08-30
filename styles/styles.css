@@ -188,7 +188,8 @@ i:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all var(--normal-speed);
+    transition:
+        background-color var(--normal-speed);
 }
 
 .navigation-item.active > button {
@@ -284,15 +285,6 @@ i:hover {
     animation-fill-mode: forwards;
 }
 
-/*h1.title::before{
-    content: "I'm "
-}
-
-h1.title::after{
-    content: "."
-}
-*/
-
 .profile-picture {
     border-radius: 30px;
     border: solid 3px;
@@ -310,6 +302,10 @@ h1.title::after{
     animation: var(--welcome-speed) show;
     animation-delay: calc(1s + 3.5 * var(--welcome-speed));
     animation-fill-mode: forwards;
+}
+
+.notransition {
+    transition: none !important;
 }
 
 p {
