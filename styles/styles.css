@@ -2,24 +2,24 @@
 
     color-scheme: light dark; 
 
-    /* Colo palette */
-    --darkest-color: #2C3532;
-    --dark-color: #0F6466;
-    --normal-color: #D8B08C;
-    --light-color: #FFCB9A;
-    --lightest-color: #D2E8E3;
+    /* Color palette */
+    --darkest-color: #27187E;
+    --dark-color: #4259C9;
+    --dark-text: white;
+    --dark-main-bg: var(--darkest-color);
+    --dark-footer-bg: var(--dark-color);
+    --dark-items: var(--dark-text);
+    --dark-items-hover: #CFD974;
+    --dark-bold: #BAC762;
 
-    --light-main-bg: var(--light-color);
-    --light-footer-bg: var(--lightest-color);
-    --light-items: var(--normal-color);
-    --light-items-hover: var(--light-color);
-    --light-text: var(--darkest-color);
-
-    --dark-main-bg: var(--dark-color);
-    --dark-footer-bg: var(--darkest-color);
-    --dark-items: var(--normal-color);
-    --dark-items-hover: var(--dark-color);
-    --dark-text: var(--lightest-color);
+    --lightest-color: #D9DEFF;
+    --light-color: #A7ADF0;
+    --light-text: #010265;
+    --light-main-bg: var(--lightest-color);
+    --light-footer-bg: var(--light-color);
+    --light-items: var(--light-text);
+    --light-items-hover: #D79B2B;
+    --light-bold: #D79B2B;
 
     /* Transition times*/
     --normal-speed: 1s;
@@ -57,11 +57,11 @@
 /* Tags */
 html:not(span, i) {
     font-family: "ubuntu-mono", monospace;
-    text-color: light-dark(var(--dark-color), var(--light-color));
+    text-color: light-dark(var(--dark-color), var(--dark-text));
 }
 
-b {
-    color: light-dark(var(--darkest-color), var(--lightest-color));
+b:not(h1, h2) {
+    color: light-dark(var(--light-bold), var(--dark-bold));
 }
 
 * {
@@ -82,7 +82,6 @@ body {
 header {
     position: sticky;
     top: 0;
-    z-index: 1;
 }
 
 h2 {
@@ -169,19 +168,23 @@ i:hover {
     width: 100%;
     margin: 0;
     padding: 1.5em;
-    border-bottom: solid 1px;
-    border-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
+    border-top: solid 1px;
+    border-color: light-dark(var(--normal-color), var(--normal-color));
     justify-content: space-between;
 }
 
+.navigation-item:nth-child(3) {
+    border-bottom: solid 1px;
+}
+
 .navigation-item:hover {
-    background-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
+    background-color: light-dark(var(--light-main-bg), var(--dark-main-bg));
     transition: background-color var(--fast-speed);
 }
 
 .navigation-item.active {
     box-sizing: border-box;
-    background-color: light-dark(var(--light-items-hover), var(--dark-items-hover));
+    background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
     border-bottom: solid 2px;
     border-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
     display: flex;
@@ -287,7 +290,7 @@ i:hover {
 .profile-picture {
     border-radius: 30px;
     border: solid 3px;
-    border-color: light-dark(var(--normal-color), var(--normal-color));
+    border-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
     opacity: 0;
     animation: var(--welcome-speed) ease-out show;
     animation-delay: var(--normal-speed);
