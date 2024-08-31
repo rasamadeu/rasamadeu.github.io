@@ -77,11 +77,13 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     transition: background-color var(--normal-speed);
+    z-index: 0;
 }
 
 header {
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 h2 {
@@ -375,10 +377,6 @@ to {
 
     .side-div > * {
         width: 100%;
-    }
-
-    .header {
-        flex: 0 1 auto;
     }
 
     .scroll-div {

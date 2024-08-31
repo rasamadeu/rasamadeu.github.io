@@ -1,5 +1,6 @@
 const top_nav_bar = document.querySelector(".top-navigation-bar");
 const profile_picture = document.querySelector(".profile-picture");
+const menu_button = document.querySelector("#menu-toggle");
 
 // Set header title
 const title = document.querySelectorAll(".title");
