@@ -29,12 +29,15 @@ function setLandscape(){
 */
 	// Change html structure
 	document.querySelector("body").appendChild(profile_picture);
-	const scrollable_div = document.createElement("div");
-	scrollable_div.classList.add("side-div");
-	document.querySelector("body").appendChild(scrollable_div);
-	scrollable_div.appendChild(document.querySelector("header"));
-	scrollable_div.appendChild(document.querySelector("main"));
-	scrollable_div.appendChild(document.querySelector("footer"));
+	const side_div = document.createElement("div");
+	side_div.classList.add("side-div");
+	const scroll_div = document.createElement("div");
+	scroll_div.classList.add("scroll-div");
+	scroll_div.appendChild(document.querySelector("main"));
+	scroll_div.appendChild(document.querySelector("footer"));
+	side_div.appendChild(document.querySelector("header"));
+	side_div.appendChild(scroll_div);
+	document.querySelector("body").appendChild(side_div);
 
 }
 

@@ -107,7 +107,7 @@ main > * {
 }
 
 footer {
-    height: 100px;
+    min-height: 100px;
     padding: 0;
     background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
     order: 4;
@@ -368,7 +368,6 @@ to {
         flex: 1;
         display: flex;
         flex-flow: column nowrap;
-        justify-content: center;
         }
 
     .side-div > * {
@@ -379,24 +378,27 @@ to {
         flex: 0 1 auto;
     }
 
-    main {
+    .scroll-div {
         overflow: auto;
         max-width: 100%;
         flex: 1;
         display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
+        flex-flow: column nowrap;
+        align-items: center;
     }
 
-    main > * {
-        width: 90%;
+    .scroll-div > * {
+        width: 100%;
+    }
+
+    main {
+        flex: 1;
+        display: flex;
+        flex-flow: row wrap;
     }
 
     footer {
         flex: 0 1 auto;
     }
-
-
-
 }
 
