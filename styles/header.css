@@ -172,7 +172,7 @@ i:hover {
     margin: 0;
     padding: 1.5em;
     border-top: solid 1px;
-    border-color: light-dark(var(--normal-color), var(--normal-color));
+    border-color: light-dark(var(--light-text), var(--dark-text));
     justify-content: space-between;
 }
 
@@ -227,12 +227,8 @@ i:hover {
         background-color var(--normal-speed);
 }
 
-.theme-button{
+.button{
     width: 90px;
-}
-
-.language-button{
-    width: 80px;
 }
 
 .button > span{
