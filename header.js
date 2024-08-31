@@ -4,6 +4,7 @@ const top_nav_bar = document.querySelector(".top-navigation-bar");
 const theme_buttons = document.querySelectorAll(".theme-button");
 const language_buttons = document.querySelectorAll(".language-button");
 const menu_button = document.querySelector("#menu-toggle");
+const profile_picture = document.querySelector(".profile-picture");
 
 // Set visible theme-button
 const mode = document.querySelector("html").className;
@@ -22,17 +23,40 @@ else
 
 // Set configuration at breakpoints
 function setLandscape(){
+/*
 	top_nav_bar.classList.remove("hidden");
 	menu_button.remove();
+*/
+	// Change html structure
+	document.querySelector("body").appendChild(profile_picture);
+	const scrollable_div = document.createElement("div");
+	scrollable_div.classList.add("side-div");
+	document.querySelector("body").appendChild(scrollable_div);
+	scrollable_div.appendChild(document.querySelector("header"));
+	scrollable_div.appendChild(document.querySelector("main"));
+	scrollable_div.appendChild(document.querySelector("footer"));
+
 }
 
 function setPortrait(){
+
+	// Change navbar without transition
 	top_nav_bar.classList.add("notransition");
 	top_nav_bar.classList.add("hidden");
+	getComputedStyle(top_nav_bar).opacity;
+
+	// Add menu button
 	document.querySelector(".navigation-item.active").appendChild(menu_button);
 	menu_button.children[0].classList.add("fa-bars");
 	menu_button.children[0].classList.remove("fa-xmark");
-	getComputedStyle(top_nav_bar).opacity;
+
+	// Change html structure
+	document.querySelector("body").appendChild(document.querySelector("header"));
+	document.querySelector("body").appendChild(document.querySelector("main"));
+	document.querySelector("body").appendChild(document.querySelector("footer"));
+	document.querySelector("main").appendChild(profile_picture);
+	document.querySelector(".side-div").remove();
+
 	top_nav_bar.classList.remove("notransition");
 }
 

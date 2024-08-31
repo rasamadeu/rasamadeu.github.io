@@ -107,13 +107,12 @@ main > * {
 }
 
 footer {
-    min-height: 100px;
+    height: 100px;
     padding: 0;
     background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
     order: 4;
     transition: inherit;
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -347,33 +346,57 @@ to {
 
 @media screen and (orientation: landscape){
 
-header {
-    display: flex;
-}
+    body {
+        max-height: 100vh;
+        max-width: 100vw;
+        flex-flow: row nowrap;
+    }
 
-.top-navigation-bar {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-}
+    .profile-picture {
+        height: 100vh;
+        width: auto;
+        flex: 0;
+        border-radius: 0;
+        border: 0;
+        border-right: solid 3px;
+        opacity: 0;
+        order: 0;
+    }
 
-.top-navigation-bar > ul {
-    display: flex;
-    flex-flow: row wrap;
-}
+    .side-div {
+        order: 1;
+        flex: 1;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        }
 
-.navigation-item {
-    width: auto;
-    border-bottom: 0;
-}
+    .side-div > * {
+        width: 100%;
+    }
 
-.navigation-item.active{
-    border: 0;
-}
+    .header {
+        flex: 0 1 auto;
+    }
 
-.button-wrapper {
-    min-width: 50%;
-}
+    main {
+        overflow: auto;
+        max-width: 100%;
+        flex: 1;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    main > * {
+        width: 90%;
+    }
+
+    footer {
+        flex: 0 1 auto;
+    }
+
+
 
 }
 
