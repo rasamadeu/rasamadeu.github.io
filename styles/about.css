@@ -1,6 +1,6 @@
-/* about.html landscape orientation */
+/* about.html medium width */
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 700px){
 
     body {
         flex-flow: column nowrap;
@@ -13,23 +13,40 @@
 
     header {
         display: flex;
-        flex-flow: row nowrap;
-        z-index: 1;
-        opacity: 1;
-        flex: 0; 
+        flex-flow: row wrap;
         background-color: light-dark(var(--light-footer-bg), var(--dark-footer-bg));
-        transition: background-color var(--normal-speed);
+        align-items: center;
     }
 
-    header > ul {
-        padding: 0;
-        margin: 0;
-        width: auto;
-        list-style-type: none;
+    #header-div {
+        width: 100%;
         display: flex;
         flex-flow: row nowrap;
-        border-right: 2px solid;
-        border-color: light-dark(var(--light-main-bg), var(--dark-main-bg));
+        align-items: center;
+        justify-content: space-between;
+        align-content: stretch;
+    }
+
+    #header-div > ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    #header-div > ul > * {
+        border: 0;
+    }
+
+    #menu-toggle {
+        margin-right: 25px;
+    }
+
+    .top-navigation-bar {
+        width: 100%;
+        max-height: 5em;
     }
 
     .navigation-item {
@@ -43,16 +60,23 @@
         background-color: light-dark(var(--light-main-bg), var(--dark-main-bg));
     }
 
-    .navigation-item:nth-child(3) {
-        border-bottom: 0;
-    }
-
     .button{
         width: 100px;
     }
 
     main {
         flex: 1; 
+    }
+
+}
+
+/* about.html large width */
+
+@media screen and (min-width: 1050px){
+
+    #button-div {
+        display: flex;
+        flex-flow: row nowrap;
     }
 
 }
