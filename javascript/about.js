@@ -10,19 +10,39 @@ const MEDIUM = 1;
 const LARGE = 2;
 let breakpoint = PORTRAIT;
 
+// Dictionary for header indices
+let pagename = nav_item_active.children[0].textContent;
+
+const dic_index = {
+	"Homepage": 0,
+	"About": 1,
+	"Projects": 2,
+	"Contacts": 3,
+	"Página Inicial": 0,
+	"Sobre": 1,
+	"Projectos": 2,
+	"Contactos": 3
+};
+
 // Set configuration at breakpoints
 function setMediumWidth(){
 
 	// Change html structure
-	const text = nav_item_active.children[0].textContent;
 	nav_item_active.remove();
 	const new_li = document.createElement("li");
 	const new_h2 = document.createElement("h2");
-	new_h2.textContent = text;
+	new_h2.textContent = pagename;
 	new_li.appendChild(new_h2);
 	new_li.classList.add("navigation-item");
 	new_li.classList.add("active");
-	ul.insertBefore(new_li, ul.children[1]);
+	if (pagename === "Contacts" || pagename === "Contactos")
+	{
+		ul.append(new_li);
+	}
+	else
+	{
+		ul.insertBefore(new_li, ul.children[dic_index[pagename]]);
+	}
 	const div = document.createElement("div");
 	div.id = "header-div";
 	div.appendChild(ul);
@@ -36,7 +56,7 @@ function removeMediumWidth(){
 	// Change navbar without transition
 	top_nav_bar.classList.add("notransition");
 	top_nav_bar.classList.add("hidden");
-	ul.children[1].remove();
+	ul.children[dic_index[pagename]].remove();
 	document.querySelector("#header-div").remove();
 	top_nav_bar.insertBefore(ul, top_nav_bar.children[0]);
 	header.insertBefore(nav_item_active, top_nav_bar);
