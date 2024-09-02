@@ -195,7 +195,7 @@ i:hover {
     align-items: center;
 }
 
-.navigation-item.active > button {
+#menu-toggle {
     width: 35px;
     height: 35px;
 }
