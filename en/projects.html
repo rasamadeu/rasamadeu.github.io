@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
     <script src="https://kit.fontawesome.com/98731e439a.js" crossorigin="anonymous"></script>
     <script type="module" src="../javascript/main.js"></script>
-    <script type="module" src="../javascript/about.js"></script>
+    <script type="module" src="../javascript/header.js"></script>
+    <script type="module" src="../javascript/projects.js"></script>
+    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/about.css">
-    <title>Homepage</title>
+    <link rel="stylesheet" href="../styles/projects.css">
+    <title>Projects</title>
     <script>
         // Check if localstorage is available
         function storageAvailable(type) {
@@ -113,22 +115,104 @@
     </header>
 
     <main>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
+        <ul>
+            <li class="active">
+                Thesis
+            </li>
+            <li>
+                Personal Webpage
+            </li>
+            <li>
+                Simulation
+            </li>
+            <li>
+                MuonGUI
+            </li>
+        </ul>
+        <div class="text active">
+            <h3> CKM unitarity puzzle with Abelian flavour symmetries</h3>
+            <p> The Standard Model (SM) of particle physics is considered to be one of the greatest theoretical
+                achievements of Physics. It successfully describes three [electroweak (EW) and strong] out of the four
+                fundamental interactions among the elementary particles known to mankind. However, we today know that
+                it is an incomplete theory! For example, neutrino oscillations, which indicate that neutrinos are
+                massive particles and that there is lepton mixing, is a phenomena
+                that requires beyond the SM (BSM) physics in order to be accounted for. As a result, any experimental
+                evidence
+                or hint which contradicts the SM is crucial, since these help physicists to better understand the
+                Universe.
+            </p>
+            <p> In my thesis, I adressed a recent development in the measurement of the first row of the
+                Cabibbo-Kobayashi-Maskawa matrix, which is in tension with the prediction of unitary quark mixing,
+                commonly
+                known as <b>Cabibbo angle anomaly</b>. The proposed model is a SM extension with a <b>vector-like quark
+                    (VLQ)</b>. Furthermore, to increase the predictivity of the theory, the number of free parameters in
+                the Yukawa and mass matrices is reduced by imposing <b>texture zeros</b> using <b>Abelian
+                    symmetries</b>, while
+                maintaining
+                compatibility with
+                data. To achieve this, the SM must be further extended with a second Higgs doublet. For more details,
+                you
+                can check my thesis <a href="../Thesis.pdf"><b>here</b><a>.
+            </p>
+            <p>
+                During this project, I autonomously learned a lot about <b>Python</b>, specifically the <b>Numpy</b> and
+                <b>iMinuit</b> packages,
+                having developed several modules to obtain the major results in the thesis. The plots were made with
+                <b>matplotlib</b>. The code is on my <a href=""><b>Github</b></a> page.
+            </p>
+        </div>
+
+        <div class="text">
+            <h3> This webpage</h3>
+            <p> Yes, I know it is a bit "meta" to refer to my personal webpage as a project in my personal webpage...
+                Gosh, let me stop saying personal webpage, it's getting a bit cringy. </p>
+            <p> While watching the CS50's lecture on <b>HTML</b>, <b>CSS</b> and <b>Javascript</b>, I decided to
+                challenge
+                myself to create this website. The goal was to develop a basic understanding of these web development
+                building blocks and to write everything myself.</p>
+            <p> After many hours of reading documentation and guides in <a href="https://developer.mozilla.org"><b>MDN
+                        Web docs</b></a> and <a href="https://css-tricks.com/"><b>CSS tricks</b></a>, I learned concepts
+                such as CSS selectors and properties, the <b>Flexbox</b>
+                layout model, basic <b>DOM</b> manipulation with Javascript and <b>responsive web design</b>.
+            </p>
+            <p>
+                This project only scratches the surface of the world of web development, and there is
+                still a lot to learn. Nonetheless, I think that
+                my goals were achieved and I'm content with the final result. Everyone has got to start somewhere I
+                guess!
+            </p>
+        </div>
+
+        <div class="text">
+            <h3>Simulation of two strings attached to a pendulum</h3>
+            <p> This projects consists of a <b>GUI</b> which allows the user to control several parameters of the
+                simulation.
+            </p>
+            <p> It consists of 3 panels:</p>
+            <ul>
+                <li> <b>Plots</b>: displays two real-time plots of the motion. You can choose from a variety of
+                    coordinates to display. </li>
+                <li> <b>Simulation</b>: displays the motion of the masses and allows the user to control the speed of
+                    simulation and collision with wall. </li>
+                <li> <b>System parameters and Initial conditions</b>: allows the user to control the physical parameters
+                    of the
+                    masses and springs and set the initial conditions of the motion. </li>
+            </ul>
+            <p> This program was written in <b>C</b>, and the GUI was built using the <b>GTK+</b> library. You can check
+                the code <a href=""> <b>here</b></a>.</p>
+            <img src="../images/physical_simulation.png">
+        </div>
+
+        <div class="text">
+            <h3> last</h3>
+            <p> asetnudanoetka da bnasdtna adontue a tnde atdaad ad etan oue ntadeud antdta nodeunadntkabjkntjbk aee
+                dhad kar daedkad acd rcade ckdec d rcd k</p>
+            <p> asetnudanoetka da bnasdtna adontue a tnde atdaad ad etan oue ntadeud antdta nodeunadntkabjkntjbk aee
+                dhad kar daedkad acd rcade ckdec d rcd k</p>
+            <p> asetnudanoetka da bnasdtna adontue a tnde atdaad ad etan oue ntadeud antdta nodeunadntkabjkntjbk aee
+                dhad kar daedkad acd rcade ckdec d rcd k</p>
+        </div>
+
     </main>
 
 </body>

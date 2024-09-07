@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt">
+<html lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
     <script src="https://kit.fontawesome.com/98731e439a.js" crossorigin="anonymous"></script>
     <script type="module" src="../javascript/main.js"></script>
-    <script type="module" src="../javascript/about.js"></script>
+    <script type="module" src="../javascript/header.js"></script>
+    <script type="module" src="../javascript/projects.js"></script>
+    <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/header.css">
-    <link rel="stylesheet" href="../styles/about.css">
-    <title>Pagina inicial</title>
+    <link rel="stylesheet" href="../styles/projects.css">
+    <title>Projects</title>
     <script>
         // Check if localstorage is available
         function storageAvailable(type) {
@@ -113,22 +115,96 @@
     </header>
 
     <main>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
-        <p>
-            aseantoeunasotheuseoa a snaeuuntadenadndts t daueadt eoad eod tu edt ue odnt ue dt u eodt u eodtn e adnt a
-            da udnt ueadt u eodnt u eoadnt ueadtn ae dtn.
-        </p>
+        <ul>
+            <li class="active">
+                Tese
+            </li>
+            <li>
+                Webpage pessoal
+            </li>
+            <li>
+                Simulação
+            </li>
+            <li>
+                MuonGUI
+            </li>
+        </ul>
+        <div class="text active">
+            <h3> Puzzle da unitariedade da matriz CKM com simetrias Abelianas de sabor</h3>
+            <p> O Modelo Padrão (MP) de física de partículas é um dos maiores feitos teóricos da Física. Este descreve
+                com sucesso três das quatro interações fundamentais (eletrofraca e forte) entre as partículas
+                elementares conhecidas pela Humanidade. Contudo, hoje sabemos que o MP é uma teoria incompleta! Por
+                exemplo, as oscilações de neutrinos, que indicam que estas partículas têm massa e que existe mistura
+                leptónica, é um fenómeno que exige física além do MP para ser explicado. Assim, qualquer evidência ou
+                dica experimental que contradiz o MP é crucial, uma vez que estas ajudam físicos a compreender melhor o
+                Universo. </p>
+            <p> Na minha tese, eu foco-me num desenvolvimento recente na medição da primeira linha da matriz
+                Cabibbo-Kobayashi-Maskawa, que apresenta um desvio em relação à mistura unitária de quarks prevista pelo
+                MP. Este desvio é conhecido por <b>anomalia do ângulo de Cabibbo</b>. O modelo proposto é uma extensão
+                do MP com <b>quarks do tipo vector</b>. Para além disto, de forma a aumentar a predictividade da teoria,
+                o número de parâmetros livres nas matrizes de massa e de Yukawa é reduzido impondo <b>zeros de
+                    textura</b> resultantes de <b>simetrias Abelianas</b> de sabor. Para este efeito, o MP tem de ser
+                extendido com um segundo dubleto de Higgs. Para mais detalhes, podes ler a minha tese <a
+                    href="../Thesis.pdf"><b>aqui</b><a>.
+            </p>
+            <p>
+                Ao longo deste projecto aprendi de forma autónoma <b> Python</b>, com ênfase nas bibliotecas
+                <b>Numpy</b> e
+                <b>iMinuit</b>, tendo desenvolvido vários módulos para obter a maioria dos resultados da minha tese. Os
+                gráficos foram feitos com recurso à biblioteca <b>matplotlib</b>. O código está na minha página <a
+                    href=""><b>Github</b></a>.
+            </p>
+        </div>
+
+        <div class="text">
+            <h3> Esta webpage</h3>
+            <p> Sim, eu sei que é um pouco "meta" referir a minha webpage pessoal como um projecto na minha webpage
+                pessoal... Enfim, vou parar de dizer webpage pessoal que isto está a tornar-se constrangedor...
+            </p>
+            <p> Enquanto assistia à aula do curso CS50 sobre <b>HTML</b>, <b>CSS</b> e <b>Javascript</b>, eu decidi
+                desafiar-me a criar este website. O objectivo era fomentar um conhecimento básico sobre estas
+                ferramentas fundamentais em desenvolvimento web e construir este projecto de raiz.</p>
+            <p> Depois de muitas horas a ler documentação e guias no <a href="https://developer.mozilla.org"><b>MDN
+                        Web docs</b></a> e <a href="https://css-tricks.com/"><b>CSS tricks</b></a>, eu aprendi conceitos
+                como CSS selectors e properties, o modelo layout <b>Flexbox</b>, manipulações básicas de <b>DOM</b> com
+                Javascript e <b>web design responsivo</b>.
+            </p>
+            <p>
+                Este projecto é apenas a ponta do iceberg que constitui web development, e ainda há muito a aprender.
+                Não obstante, penso que os meus objectivos foram cumpridos e estou satisfeito com o resultado final.
+                Todos temos de começar nalgum lado!
+            </p>
+        </div>
+
+        <div class="text">
+            <h3>Simulação de duas molas presas a um pêndulo</h3>
+            <p> Este projecto consiste numa <b>GUI</b> que permite ao utilizador controlar vários parâmetros da
+                simulação.
+            </p>
+            <p> A UI consiste em 3 painéis:</p>
+            <ul>
+                <li> <b>Gráficos</b>: exibe dois gráficos em tempo real referentes ao movimento. O utilizador pode
+                    escolher dentre uma variedade de sistemas de coordenadas. </li>
+                <li> <b>Simulação</b>: mostra o movimento das massas e permite o controlo da velocidade de simulação e
+                    colisão com paredes. </li>
+                <li> <b>Grandezas Físicas e Condições Iniciais</b>: permite o controlo sobre os parâmetros físicos das
+                    massas e molas e a definição das condições inicias do movimento.</li>
+            </ul>
+            <p> Este programa foi escrito em <b>C</b>, e a GUI foi construída com a biblioteca <b>GTK+</b>. Podes
+                verificar o código <a href=""> <b>aqui</b></a>.</p>
+            <img src="../images/physical_simulation.png">
+        </div>
+
+        <div class="text">
+            <h3> last</h3>
+            <p> asetnudanoetka da bnasdtna adontue a tnde atdaad ad etan oue ntadeud antdta nodeunadntkabjkntjbk aee
+                dhad kar daedkad acd rcade ckdec d rcd k</p>
+            <p> asetnudanoetka da bnasdtna adontue a tnde atdaad ad etan oue ntadeud antdta nodeunadntkabjkntjbk aee
+                dhad kar daedkad acd rcade ckdec d rcd k</p>
+            <p> asetnudanoetka da bnasdtna adontue a tnde atdaad ad etan oue ntadeud antdta nodeunadntkabjkntjbk aee
+                dhad kar daedkad acd rcade ckdec d rcd k</p>
+        </div>
+
     </main>
 
 </body>
