@@ -1,0 +1,127 @@
+main {
+    display: block;
+}
+
+h1, .text > h2 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+img {
+    border: solid 3px;
+    border-radius: 15px;
+    border-color: light-dark(var(--light-bold), var(--dark-bold));
+}
+
+figure {
+    display: inline-block;
+    float: right;
+    margin-left: 5rem;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
+figure figcaption {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+div {
+    margin: 0;
+}
+
+.quote {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: bold;
+    color: light-dark(var(--light-bold), var(--dark-bold));
+}
+
+div > ul > li {
+    margin-bottom: 1rem;
+}
+
+#pt-music {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 1050px)
+{
+
+#pt-music {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+}
+
+@media screen and (max-width: 850px)
+{
+
+.quote {
+    font-size: 1.2rem;
+}
+
+
+#pt-music {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    }
+
+#science {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    }
+
+#science > figure{
+        width: 100%;
+        order: 10;
+        margin: 0;
+    }
+
+figure figcaption {
+    font-size: 1.25rem;
+    }
+}
+
+
+@media screen and (max-width: 600px)
+{
+
+#pt-music {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+.text {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    }
+
+div > figure{
+    width: 100%;
+    margin: 0;
+    }
+
+#ist {
+    order: 3;
+    margin: 2rem 0;
+}
+
+#code, #bjj, #arrabida {
+    order: 10;
+}
+
+}

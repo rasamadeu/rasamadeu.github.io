@@ -5,7 +5,7 @@ const dic = {
 	"Thesis": 0,
 	"Personal Webpage": 1,
 	"Simulation": 2,
-	"MuonGUI": 3,
+	//"MuonGUI": 3,
 	"Tese": 0,
 	"Webpage pessoal": 1,
 	"Simulação": 2

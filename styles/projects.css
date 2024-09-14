@@ -39,7 +39,7 @@ main > ul > li {
     transition: background-color var(--normal-speed);
 }
 
-main > ul > li:nth-child(4){
+main > ul > li:nth-child(3){
     border-bottom: 0;
 }
 
@@ -102,7 +102,7 @@ h3 {
         padding: 2rem;
     }
 
-    main > ul > li:nth-child(4){
+    main > ul > li:nth-child(3){
         border-right: 0;
         border-bottom: 3px solid;
         border-color: light-dark(var(--light-bold), var(--dark-bold));
@@ -126,13 +126,11 @@ h3 {
 
     main > ul > li{
         padding: 1rem;
-        min-width: 50%;
+        min-width: 100%;
     }
 
-    main > ul > li:nth-child(2){
+    main > ul > li{
         border-right: 0;
-        border-bottom: 3px solid;
-        border-color: light-dark(var(--light-bold), var(--dark-bold));
     }
 
     .text {
