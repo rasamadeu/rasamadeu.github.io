@@ -15,7 +15,7 @@ function storageAvailable(type) {
 }
 
 // Sets localStorage if not defined already
-if (storageAvailable("localStorage")) {
+if (storageAvailable("localStorage") && !localStorage.getItem("mode")) {
 	localStorage.setItem("mode", "os");
 	document.querySelector("html").className = "os";
 }
