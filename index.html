@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
-<!-- This page redirects the user to the index.html depending on its browser language-->
+<!-- This page redirects the user to the index.html depending on its browser language
+				window.location.replace("./pt"); -->
 <html>
 
 <head>
@@ -9,11 +10,11 @@
 		const languages = navigator.languages;
 		console.log(languages);
 		for (const language of languages) {
+			console.log(language);
 			if (language.includes("pt")) {
-				window.location.replace("./pt");
+				console.log("oueouoeu");
 			}
 		}
-		window.location.replace("./en");
 	</script>
 </head>
 
