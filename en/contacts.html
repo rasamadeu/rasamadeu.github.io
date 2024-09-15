@@ -13,38 +13,13 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
     <script src="https://kit.fontawesome.com/98731e439a.js" crossorigin="anonymous"></script>
+    <script src="../javascript/localstorage.js"></script>
     <script type="module" src="../javascript/main.js"></script>
     <script type="module" src="../javascript/header.js"></script>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/contacts.css">
     <title>Ricardo Amadeu | Contacts</title>
-    <script>
-        // Check if localstorage is available
-        function storageAvailable(type) {
-            let storage;
-            try {
-                storage = window[type];
-                const x = "test";
-                storage.setItem(x, x);
-                storage.removeItem(x, x);
-                return true;
-            }
-            catch (e) {
-                return e instanceof DOMexception &&
-                    e.name === "QuotaExceededError";
-            }
-        }
-
-        // Sets localStorage if not defined already
-        if (storageAvailable("localStorage") && localStorage.length === 0) {
-            localStorage.setItem("mode", "os");
-        }
-        else {
-            const mode = localStorage.getItem("mode");
-            document.querySelector("html").className = mode;
-        }
-    </script>
 
 </head>
 
