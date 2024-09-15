@@ -310,8 +310,7 @@ i:hover {
 p {
     line-height: 30px;
     margin: 0 0 1rem;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: start;
 }
 
 /* Animation */
