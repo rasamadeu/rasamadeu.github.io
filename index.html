@@ -8,15 +8,13 @@
 	<script>
 		const languages = navigator.languages;
 		console.log(languages);
-		if (languages.includes("pt-PT"))
-		{
+		for (const language of languages) {
+			if (language.includes("pt")) {
+				window.location.replace("./pt");
+			}
 		}
-		else
-		{
-		}
+		window.location.replace("./en");
 	</script>
 </head>
-<body>
-	<h1>  aleutaouh</h1>
-</body>
+
 </html>
